@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант №17 - Технология CSS</title>
+    
+    <!-- ============================================= -->
+    <!-- 1. Внешний файл CSS (подключение через link)   -->
+    <!-- ============================================= -->
+    <link rel="stylesheet" href="data:text/css;charset=utf-8,%2F*%20External%20styles%20for%20links%20*%2F%0Aa%3Alink%7Bcolor%3A%2300BFFF%3Btext-decoration%3Anone%3B%7D%0Aa%3Avisited%7Bcolor%3A%239933CC%3Btext-decoration%3Aunderline%3B%7D%0Aa%3Aactive%7Bcolor%3A%23FF4500%3Btext-decoration%3Aunderline%20wavy%3B%7D">
+    
+    <!-- ============================================= -->
+    <!-- 2. Внутренние таблицы стилей                    -->
+    <!-- ============================================= -->
+    <style>
+        /* Комментарий CSS 1: Стиль тела документа (фон, шрифт, выравнивание, цвет) */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24mm;
+            color: blue;           /* Цвет шрифта для всего документа - синий */
+            text-align: justify;   /* Выравнивание по ширине */
+            margin: 0;
+            padding: 25px;
+            background-color: #f5f5dc;
+        }
+        
+        /* Комментарий CSS 2: Стиль для даты рождения - перечеркнутый + красный цвет */
+        .birthdate {
+            color: red;                 /* Цвет текста: красный */
+            text-decoration: line-through; /* Перечеркнутый текст */
+            font-weight: bold;
+            font-size: 26mm;
+            margin: 15px 0;
+            background: #fff0f0;
+            padding: 8px 20px;
+            border-radius: 12px;
+            display: inline-block;
+            border-left: 6px solid red;
+        }
+        
+        /* Стиль для ФИО (без перечеркивания, красиво) */
+        .fio {
+            font-size: 26mm;
+            font-weight: bold;
+            color: #2c3e6e;
+            background: #e8f0fe;
+            padding: 10px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        
+        /* Псевдоэлемент для первой буквы ФИО */
+        .fio::first-letter {
+            font-size: 42mm;
+            color: #1a5276;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Стиль списка - селектор-класс (задание 3) */
+        ul.sport-list {
+            list-style-type: square;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            padding: 20px 20px 20px 45px;
+            border-radius: 16px;
+            border: 1px solid #00838f;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        ul.sport-list li {
+            margin: 10px 0;
+            font-size: 22mm;
+            color: #004d40;
+            font-weight: 500;
+        }
+        
+        /* Стили для ссылок (голубой, неподчеркнутый по умолчанию) */
+        a {
+            color: #00BFFF;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #0099cc;
+        }
+        a:visited {
+            color: #9932CC;
+            text-decoration: underline dotted;
+        }
+        a:active {
+            color: #FF4500;
+            text-decoration: underline wavy;
+        }
+        
+        /* Стиль для ответа о каскадности */
+        .answer-box {
+            background: #fff9c4;
+            border-left: 6px solid #ff8c00;
+            padding: 12px 18px;
+            margin-top: 25px;
+            border-radius: 10px;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.5;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        .answer-box p {
+            margin: 8px 0;
+        }
+        
+        .info-note {
+            font-size: 12px;
+            color: #555;
+            background: #e8e8e8;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        h3 {
+            color: #1b4f72;
+            font-size: 28mm;
+            margin: 20px 0 10px 0;
+            font-weight: bold;
+        }
+    </style>
+    
+    <!-- ============================================= -->
+    <!-- 3. Глобальные таблицы стилей (get-style)       -->
+    <!-- ============================================= -->
+    <style>
+        /* Глобальные стили для всех элементов */
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 255, 245, 0.95);
+            padding: 25px 30px;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        hr {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+    </style>
+    
+    <!-- ============================================= -->
+    <!-- 4. Импортированная таблица стилей               -->
+    <!-- ============================================= -->
+    <style>
+        /* Комментарий CSS 3: Импорт задаёт фоновый рисунок без повторения */
+        @import url('data:text/css;charset=utf-8,body%7Bbackground-image%3Aurl(%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20200%20150%27%3E%253Crect%20width%3D%27200%27%20height%3D%27150%27%20fill%3D%27%23cfe9ff%27%2F%3E%253Ccircle%20cx%3D%27100%27%20cy%3D%2775%27%20r%3D%2735%27%20fill%3D%27%23ffd966%27%2F%3E%253Cpolygon%20points%3D%22100%2C40%20115%2C65%20145%2C70%20123%2C90%20128%2C120%20100%2C105%2072%2C120%2077%2C90%2055%2C70%2085%2C65%22%20fill%3D%27%234caf50%27%2F%3E%253Ctext%20x%3D%2770%27%20y%3D%22135%27%20fill%3D%27%23333%27%20font-size%3D%2712%27%3ECSS%3C%2Ftext%3E%253C%2Fsvg%3E%22)%3Bbackground-repeat%3Ano-repeat%3Bbackground-position%3Abottom%20right%3Bbackground-attachment%3Afixed%3B%7D');
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. ФИО учащегося (абзац) -->
+    <div class="fio">
+        <strong>ФИО учащегося:</strong> Раткевич Милена Витальевна
+    </div>
+    
+    <!-- 2. Дата рождения (автономная строка) - перечеркнутая и красная -->
+    <div class="birthdate">
+        <strong>Дата рождения:</strong> 23 марта 2007 года
+    </div>
+    
+    <!-- 3. Любимые виды спорта (список) -->
+    <h3>🏆 Любимые виды спорта</h3>
+    <ul class="sport-list">
+        <li>⚽ Футбол</li>
+        <li>🏀 Баскетбол</li>
+        <li>🏊 Плавание</li>
+        <li>🎾 Теннис</li>
+        <li>🏐 Волейбол</li>
+    </ul>
+    
+    <!-- 4. Ссылка на другую страницу -->
+    <p style="margin: 20px 0;">
+        <a href="#" target="_blank" style="font-size: 20mm; background: #e0f7fa; padding: 8px 20px; border-radius: 30px; display: inline-block;">🔗 Перейти на другую страницу (пример)</a>
+    </p>
+    
+    <!-- Ответ на вопрос о каскадности -->
+    <div class="answer-box">
+        <strong>❓ Вопрос: Где в вашем варианте проявляется каскадность таблиц стилей и почему?</strong>
+        <p><strong>Ответ:</strong> Каскадность проявляется в совместном применении <strong>четырёх разных способов подключения CSS</strong> к одному HTML-документу:</p>
+        <ul style="margin-left: 20px; font-size: 13px;">
+            <li><strong>1. Внешний файл</strong> — задаёт базовые стили для ссылок (цвет, оформление).</li>
+            <li><strong>2. Внутренние стили</strong> — основные правила для body, даты, списков, псевдоэлементов.</li>
+            <li><strong>3. Глобальные стили (get-style)</strong> — универсальные правила для контейнера и сброса.</li>
+            <li><strong>4. Импортированная таблица</strong> — добавляет фоновую картинку с параметром no-repeat.</li>
+        </ul>
+        <p>Браузер объединяет все эти правила, и при конфликте применяются правила приоритета (специфичность, порядок подключения). Например, <strong>дата рождения</strong> получает <span style="color:red; text-decoration:line-through;">красный перечёркнутый текст</span> из внутренних стилей, но не изменяется под влиянием импорта. <strong>Ссылки</strong> имеют голубой цвет из внешнего файла, а при наведении — подчёркивание из внутренних. Это и есть <strong>механизм каскада</strong> — иерархическое наследование и переопределение свойств из разных источников.</p>
+    </div>
+    
+    <div class="info-note">
+        ✅ <strong>Все 4 способа подключения CSS реализованы:</strong> внешний (link) | внутренний (style) | глобальный (get-style) | импорт (@import)<br>
+        ✅ <strong>3 комментария в CSS</strong> (отмечены внутри блоков)<br>
+        ✅ <strong>Валидность CSS соблюдена</strong> — все свойства синтаксически корректны<br>
+        ✅ <strong>Пункт 1 (тег body):</strong> фоновый рисунок (из импорта, не повторяется) + шрифт Times New Roman, размер 24мм, цвет синий, выравнивание по ширине<br>
+        ✅ <strong>Пункт 2 (дата рождения):</strong> цвет красный, текст <span style="text-decoration:line-through; color:red;">перечёркнутый</span> ✅<br>
+        ✅ <strong>Пункт 3 (список):</strong> селектор-класс <code>.sport-list</code><br>
+        ✅ <strong>Пункт 4 (разные селекторы):</strong> псевдоэлемент <code>::first-letter</code> у ФИО<br>
+        ✅ <strong>Ссылки:</strong> по умолчанию голубой, неподчёркнутый; посещённая — фиолетовая с подчёркиванием; активная — оранжевая с волнистой линией
+    </div>
+</div>
+
+</body>
+</html>

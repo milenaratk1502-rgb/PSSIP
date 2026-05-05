@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Задание 1 -->
+    <meta charset="UTF-8">
+    <title>Раткевич Милена Витальевна — Личная страница</title>
+</head>
+
+<!-- Фоновый рисунок (произвольное графическое изображение) -->
+<body background="https://drawinspire.com/img/pencil/anything/pencil_anything19.png" bgcolor="#e8f0fe" text="#000000" link="#0000ff" vlink="#800080">
+
+    <!-- Шрифт Arial, размер 12pt для всего документа через тег font -->
+    <font face="Arial, Helvetica, sans-serif" size="2">  <!-- size=2 примерно 12pt -->
+    
+    <!-- Задание 2-->
+    <!-- ФИО - заголовок размера 2, выравнивание по центру -->
+    <h2 align="center">Раткевич Милена Витальевна</h2>
+    
+    <!-- Группа - курсивом, синим цветом, выравнивание по центру, перечеркнутая -->
+    <p align="center">
+        <font color="blue"><i><s>ПЗТ-42</s></i></font>
+    </p>
+    
+    <!-- Курс - выравнивание по правому краю, подчеркнутый -->
+    <p align="right">
+        <u>3-й курс</u>
+    </p>
+    
+    <!-- Мои увлечения - новый абзац, выравнивание по ширине, верхний индекс -->
+    <p align="justify">
+        <sup>Мои увлечения: игра на гитаре, чтение книг, расклады на таро и просмотр футбола.</sup>
+    </p>
+    
+    <!-- Задание 3 -->
+    <hr>
+    <h3>Список</h3>
+    <ul type="circle">
+        <li>Привет</li>
+        <li>До встречи</li>
+        <li>Пока</li>
+    </ul>
+    
+    <!-- Якорь для списка -->
+    <a name="listSection"></a>
+    
+    <hr>
+    <!-- Задание 4 -->
+    <h3>Изображение:</h3>
+    <div align="right">
+        <img src="т.png" alt="Привет" width="300" height="200" border="2" title="привет">
+        <br><font size="1">Привет</font>
+    </div>
+    
+    <br clear="all">
+    <hr>
+    <!-- Задание 5 -->
+    <a name="top"></a> <!-- якорь вверх страницы -->
+    
+    <!-- Гиперссылка в виде картинки на другую страничку (откроется в новой вкладке) -->
+    <p><b>Гиперссылка в виде картинки:</b><br>
+    <a href="https://metanit.com/sql/mysql/1.1.php" target="_blank">
+        <img src="https://drawinspire.com/img/pencil/anything/pencil_anything19.png" alt="Переход" width="150" height="100" border="1">
+    </a>
+    </p>
+    
+    <!-- Внутренняя ссылка снизу вверх страницы на СПИСОК (якорь #listSection) -->
+    <p><a href="#listSection">⬆ Перейти к списку (внутренняя ссылка снизу вверх)</a></p>
+    <hr>
+    
+    <!-- Задание 6 -->
+    <h3>Таблица:</h3>
+    <!-- Таблица -->
+    <table border="1" cellpadding="8" cellspacing="0" width="60%" align="center">
+        <tr bgcolor="#FFD966">
+            <th colspan="2" align="center">Оценки</th>
+        </tr>
+        <tr>
+            <td width="50%" align="center"><b>Экзамен</b></td>
+            <td align="center">2</td>
+        </tr>
+        <tr>
+            <td align="center">Зачет</td>
+            <td bgcolor="#FFD966" align="center"><b>Десятка</b></td>
+        </tr>
+    </table>
+    <hr>
+    
+    <!-- Задание 7 -->
+    <h3 align="left">Опросы</h3>
+    <br><br>
+    
+    <form action="#" method="post">
+        <!-- Текст "Ваше впечатление от сайта" по левому краю -->
+        <div><b>Ваше впечатление от сайта</b></div>
+        <br>
+        <!-- Варианты ответа в столбик, по левому краю -->
+        <div>
+            <input type="radio" name="impression" value="Отличное"> Отличное<br>
+            <input type="radio" name="impression" value="Хорошее"> Хорошее<br>
+            <input type="radio" name="impression" value="Нормальное"> Нормальное<br>
+            <input type="radio" name="impression" value="Так себе"> Так себе<br>
+            <input type="radio" name="impression" value="Плохое"> Плохое
+        </div>
+        <br>
+        <!-- Кнопка Голос по левому краю -->
+        <div>
+            <input type="submit" value="Голос" style="background-color: #FFD966; font-weight: bold; border: 1px solid #000; cursor: pointer;">
+        </div>
+        <br>
+        <!-- Кнопка Просмотреть результаты по левому краю -->
+        <div>
+            <input type="button" value="Просмотреть результаты" style="font-weight: bold; cursor: pointer;" onclick="alert('Результаты опроса (демонстрация)');">
+        </div>
+        <br>
+        <!-- Ссылка Архив запросов по левому краю -->
+        <div>
+            <b><a href="#" onclick="alert('Архив запросов (демонстрация)'); return false;">Архив запросов</a></b>
+        </div>
+        <br>
+    </form>
+    <hr>
+    
+    <!-- Ссылка вверх страницы -->
+    <p align="center"><a href="#top">🔝 Вверх страницы</a></p>
+    
+    <hr>
+    </font> 
+</body>
+</html>
