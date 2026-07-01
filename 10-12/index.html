@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант 10</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 30px; background-color: #f9f9f9; color: #333; }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+        .task { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h2 { color: #16a085; margin-top: 0; border-bottom: 1px dashed #ddd; padding-bottom: 5px; }
+        button { background-color: #16a085; color: white; border: none; padding: 10px 20px; font-size: 14px; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #117a65; }
+        .result { background-color: #f4f6f7; padding: 10px; border-left: 4px solid #16a085; font-family: monospace; font-size: 14px; white-space: pre-wrap; margin-top: 10px; }
+    </style>
+
+    <!-- ЗАДАНИЕ 1-->
+    <script>
+        function showTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            alert("Текущее время: " + hours + " ч. " + minutes + " мин.");
+        }
+    </script>
+
+    <!-- ЗАДАНИЕ 4 -->
+    <script src="script4.js"></script>
+</head>
+<body>
+
+    <h1>№10-12</h1>
+
+    <!-- ЗАДАНИЕ 1 -->
+    <div class="task">
+        <h2>Задание 1. Работа с объектом Date</h2>
+        <p>Вывести в диалоговое окно текущее количество часов и минут в часе.</p>
+        <button onclick="showTime()">Показать</button>
+    </div>
+
+    <!-- ЗАДАНИЕ 2 -->
+    <div class="task">
+        <h2>Задание 2. Работа с операторами организации циклов</h2>
+        <p>Вывести на экран «Привет, политех» 20 раз.</p>
+        <div class="result" id="task2-result"></div>
+        <script>
+            var count = 0;
+            var textResult = "";
+            while (count < 20) {
+                textResult += (count + 1) + ". Привет, политех\n";
+                count++;
+            }
+            document.getElementById("task2-result").innerText = textResult;
+        </script>
+    </div>
+
+     <!-- ЗАДАНИЕ 3 -->
+    <div class="task">
+        <h2>Задание 3. Работа с объектом Array</h2>
+        <p>Сформировать массив из 10 целых элементов. Подсчитать количество элементов, кратных 5.</p>
+        <div class="result" id="task3-result"></div>
+        <script>
+            // Создаем пустой массив 
+            var numbers = new Array(); 
+            var countFive = 0;
+            
+            // Циклом заполняем массив 10 случайными целыми числами от 1 до 100
+            for (var k = 0; k < 10; k++) {
+                var randomNum = Math.floor(Math.random() * 100) + 1;
+                numbers.push(randomNum);
+            }
+            
+            // Проверяем элементы на кратность 5
+            for (var j = 0; j < numbers.length; j++) {
+                if (numbers[j] % 5 === 0) {
+                    countFive++;
+                }
+            }
+            
+            var arrayOutput = "Сформированный случайный массив: [" + numbers.join(", ") + "]\n";
+            arrayOutput += "Количество элементов, кратных числу 5: " + countFive;
+            document.getElementById("task3-result").innerText = arrayOutput;
+        </script>
+    </div>
+
+    <!-- ЗАДАНИЕ 4 -->
+    <div class="task">
+        <h2>Задание 4. Работа с объектом Math</h2>
+        <p>Расчет по формуле через внешнюю функцию. Результат отображается в теле документа.</p>
+        <div class="result" id="task4-result"></div>
+        <script>
+            // Вызываем функцию calculateFormula, которая подключена из файла script4.js
+            var xVal = 3;
+            var yVal = 4;
+            var mathRes = calculateFormula(xVal, yVal);
+
+            var mathOutput = "Входные параметры: x = " + xVal + ", y = " + yVal + "\n";
+            mathOutput += "Результат расчёта: " + mathRes;
+            document.getElementById("task4-result").innerText = mathOutput;
+        </script>
+    </div>
+
+    <!-- ЗАДАНИЕ 5 -->
+    <div class="task">
+        <h2>Задание 5. Работа со строками STRING</h2>
+        <p>Операции со строками S1 («Я учащийся группы ПЗТ») и S2 («Я учусь в Политехническом колледже.»).</p>
+        <div class="result" id="task5-result"></div>
+        <script>
+            var s1 = "Я учащийся группы ПЗТ";
+            var s2 = "Я учусь в Политехническом колледже.";
+
+            // 1. Длина строки S2
+            var lenS2 = s2.length;
+
+            // 2. Поиск слова "ПЗТ" в S1
+            var hasWord = s1.indexOf("ПЗТ") !== -1 ? "Да" : "Нет";
+
+            // 3. Выделение n-го символа (n = 16) и определение его ASCII-кода
+            var n = 16;
+            var charAtN = s2.charAt(n - 1); 
+            var asciiCode = charAtN.charCodeAt(0);
+
+            var stringOutput = "1. Длина строки S2: " + lenS2 + " символов.\n";
+            stringOutput += "2. Встречается ли слово 'ПЗТ' в строке S1: " + hasWord + "\n";
+            stringOutput += "3. Выделенный " + n + "-й символ в строке S2: '" + charAtN + "'\n";
+            stringOutput += "   ASCII-код этого символа: " + asciiCode;
+
+            document.getElementById("task5-result").innerText = stringOutput;
+        </script>
+    </div>
+
+</body>
+</html>
