@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 16 - Задание 4 (Стилизованное)</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    <div class="container">
+        <header class="block b1">Блок 1</header>
+
+        <div class="block b2">Блок 2</div>
+        <div class="block b3">Блок 3</div>
+        
+        <!-- Блок 4 - Форма регистрации -->
+        <div class="b4">
+            <div class="reg-container">
+                <h2 class="reg-title">РЕГИСТРАЦИЯ</h2>
+                <form class="reg-form">
+                    <div class="reg-group">
+                        <label>№ лицевого счета <span class="orange">*</span></label>
+                        <input type="text">
+                    </div>
+                    <div class="reg-group">
+                        <label>Номер дома <span class="orange">*</span></label>
+                        <input type="text">
+                    </div>
+                    <div class="reg-group">
+                        <label>Литера дома</label>
+                        <input type="text">
+                    </div>
+                    <div class="reg-group">
+                        <label>Номер квартиры</label>
+                        <input type="text">
+                    </div>
+                    <div class="reg-group">
+                        <label>Расширение номера квартиры</label>
+                        <input type="text">
+                    </div>
+                    <div class="reg-group">
+                        <label>E-mail адрес <span class="orange">*</span></label>
+                        <input type="email">
+                    </div>
+                    <div class="reg-group">
+                        <label>Пароль <span class="orange">*</span></label>
+                        <input type="password">
+                    </div>
+
+                    <div class="reg-checkboxes">
+                        <label class="check-item">
+                            <input type="checkbox" checked> 
+                            <span>Желаю получать суперпредложения по акциям компании</span>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" checked> 
+                            <span>Принимаю условия <a href="#">обработки данных</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-reg">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="block b5">Блок 5</div>
+        
+        <!-- Блок 6 - Карточка Nike -->
+        <div class="b6">
+            <div class="nike-card">
+                <div class="badge-new">НОВАЯ КОЛЛЕКЦИЯ</div>
+                <img class="nike-logo-img" src="лого.png" alt="Nike Logo">
+
+                <div class="product-image">
+                    <img src="основа.png" alt="Кеды Nike Court Vision LO">
+                </div>
+
+                <div class="product-main-info">
+                    <h3>Кеды мужские Nike Court Vision LO</h3>
+                    <p class="article">Артикул: 909CSL... <span>52 отзыва</span></p>
+                    <p class="price-nike">4 999 ₽</p>
+                </div>
+
+                <div class="selection-section">
+                    <p class="label">ЦВЕТ</p>
+                    <div class="color-options">
+                        <div class="color-item active"><img src="основа.png" alt="brown"></div>
+                        <div class="color-item"><div class="gray-box"></div></div>
+                        <div class="color-item"><div class="white-box"></div></div>
+                    </div>
+                </div>
+
+                <div class="selection-section">
+                    <p class="label">РАЗМЕР <span class="size-link">Какой у меня размер?</span></p>
+                    <div class="size-grid">
+                        <span>39.5</span><span>40</span><span>41</span><span>41.5</span>
+                        <span>42</span><span>43</span><span>43.5</span><span>44</span>
+                    </div>
+                </div>
+
+                <button class="btn-cart">В КОРЗИНУ</button>
+                <p class="delivery-link">Как получить заказ?</p>
+            </div>
+        </div>
+        
+        <div class="block b7">Блок 7</div>
+        <div class="block b8">Блок 8</div>
+        <div class="block b9">Блок 9 (50%)</div>
+        <footer class="block b10">Блок 10 (50%)</footer>
+    </div>
+</body>
+</html>
